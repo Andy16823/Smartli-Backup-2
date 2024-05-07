@@ -9,20 +9,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\archive.png" />
     <None Remove="Images\arrow-clockwise.svg" />
     <None Remove="Images\box-fill.svg" />
     <None Remove="Images\clock-history.svg" />
+    <None Remove="Images\edit.png" />
     <None Remove="Images\exclamation-triangle-fill.svg" />
+    <None Remove="Images\export-1.png" />
+    <None Remove="Images\export-2.png" />
+    <None Remove="Images\folder.png" />
+    <None Remove="Images\history.png" />
+    <None Remove="Images\import.png" />
     <None Remove="Images\info-circle.svg" />
     <None Remove="Images\plus-circle.svg" />
     <None Remove="Images\smartli.png" />
     <None Remove="Images\smartli.svg" />
+    <None Remove="Images\trash.png" />
+    <None Remove="Images\trash.svg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\archive.png" />
+    <Resource Include="Images\edit.png" />
     <Resource Include="Images\exclamation-triangle-fill.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\export-1.png" />
+    <Resource Include="Images\export-2.png" />
+    <Resource Include="Images\folder.png" />
+    <Resource Include="Images\history.png" />
+    <Resource Include="Images\import.png" />
     <Resource Include="Images\info-circle.svg" />
     <Resource Include="Images\smartli.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -42,7 +58,7 @@
 
   <ItemGroup>
     <Reference Include="Backuper">
-      <HintPath>..\..\Backuper\Backuper\bin\Debug\net8.0\Backuper.dll</HintPath>
+      <HintPath>..\..\Backuper\Backuper\bin\Release\net8.0\Backuper.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -59,6 +75,8 @@
     <Resource Include="Images\plus-circle.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\trash.png" />
+    <Resource Include="Images\trash.svg" />
   </ItemGroup>
 
   <ItemGroup>

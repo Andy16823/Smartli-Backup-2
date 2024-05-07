@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\andy1\source\repos\SBWPF\SBWPF\App.xaml
-17-891477835
+191384786802
 
-20-1850520473
-2101689962709
-AboutDialog.xaml;BackupPlanWindow.xaml;MainWindow.xaml;RestoreBackupDialog.xaml;Styles\CustomStyles.xaml;Themes\ColourDictionaries\DarkGreyTheme.xaml;Themes\ColourDictionaries\DeepDark.xaml;Themes\ColourDictionaries\GreyTheme.xaml;Themes\ColourDictionaries\LightTheme.xaml;Themes\ColourDictionaries\RedBlackTheme.xaml;Themes\ColourDictionaries\SoftDark.xaml;Themes\ColourfulDarkTheme.xaml;Themes\ColourfulLightTheme.xaml;Themes\ControlColours.xaml;Themes\Controls.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;
+22-1398533354
+210464309183
+AboutDialog.xaml;BackupPlanWindow.xaml;ExportSecuredDialog.xaml;ImportSecruredDialog.xaml;MainWindow.xaml;RestoreBackupDialog.xaml;Styles\CustomStyles.xaml;Themes\ColourDictionaries\DarkGreyTheme.xaml;Themes\ColourDictionaries\DeepDark.xaml;Themes\ColourDictionaries\GreyTheme.xaml;Themes\ColourDictionaries\LightTheme.xaml;Themes\ColourDictionaries\RedBlackTheme.xaml;Themes\ColourDictionaries\SoftDark.xaml;Themes\ColourfulDarkTheme.xaml;Themes\ColourfulLightTheme.xaml;Themes\ControlColours.xaml;Themes\Controls.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;
 
 False
 

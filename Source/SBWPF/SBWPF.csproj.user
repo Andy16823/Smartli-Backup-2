@@ -13,12 +13,24 @@
     <Compile Update="BackupPlanWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ExportSecuredDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ImportSecruredDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="RestoreBackupDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AboutDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ExportSecuredDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ImportSecruredDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

@@ -1,4 +1,5 @@
 ﻿using Backuper;
+using Microsoft.Win32;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -294,6 +295,11 @@ namespace SBWPF
             HandyControl.Controls.Growl.SuccessGlobal(message);
         }
 
+        public void SendErrorGrowl(String message)
+        {
+            HandyControl.Controls.Growl.ErrorGlobal(message);
+        }
+
         /// <summary>
         /// Shows the progress bar from a backup plan
         /// </summary>
@@ -561,6 +567,98 @@ namespace SBWPF
         {
             var aboutDialog = new AboutDialog();
             aboutDialog.ShowDialog();
+        }
+
+        /// <summary>
+        /// Export plan menu item click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void exportPlanMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.backupsListView.SelectedItem != null)
+            {
+                var item = (BackupPlan) this.backupsListView.SelectedItem;
+                var saveFileDialog = new SaveFileDialog();
+                saveFileDialog.DefaultExt = ".sba";
+                if(saveFileDialog.ShowDialog() == true)
+                {
+                    StartProgress();
+                    object[] args = { saveFileDialog.FileName };
+                    SendInfoGrowl("Starting the export from " + item.Name);
+                    Backuper.Backuper.ExportBackupAsync(item, BackupsPath, saveFileDialog.FileName, (a) =>
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            SendSuccessGrowl("Export done!");
+                            StopProgress();
+
+                            FileInfo fileInfo = new FileInfo((String)a[0]);
+                            Process.Start("explorer.exe", fileInfo.DirectoryName);
+                        });
+                    }, args);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Export plan secured menu item event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void exportPlanSecuredMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.backupsListView.SelectedItem != null)
+            {
+                var item = (BackupPlan)this.backupsListView.SelectedItem;
+                ExportSecuredDialog exportSecuredDialog = new ExportSecuredDialog(item, this);
+                exportSecuredDialog.ShowDialog();
+            }
+        }
+
+        /// <summary>
+        /// Import menu item event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void importPlanMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Smartli Backup Archive (*.sba)|*.sba|Encrypted Smartli Backup Archive (*.esba)|*.esba";
+            if(openFileDialog.ShowDialog() == true)
+            {
+                var fileInfo = new FileInfo(openFileDialog.FileName);
+                if(fileInfo.Extension.Equals(".esba"))
+                {
+                    ImportSecruredDialog importSecured = new ImportSecruredDialog(openFileDialog.FileName, this);
+                    importSecured.ShowDialog();
+                }
+                else
+                {
+                    StartProgress();
+                    SendInfoGrowl("Starting the import from the backup archive");
+                    Backuper.Backuper.ImportFromArchiveAsync(openFileDialog.FileName, BackupsPath, (plan, args) =>
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            StopProgress();
+                            if (plan != null)
+                            {
+                                SendSuccessGrowl("Import done");
+                                if (!this.BackupPlans.Contains(plan))
+                                {
+                                    this.BackupPlans.Add(plan);
+                                }
+                                this.SavePlans();
+                            }
+                            else
+                            {
+                                SendErrorGrowl("Something went wrong with the import");
+                            }
+                        });
+                    });
+                }
+            }
         }
     }
 }

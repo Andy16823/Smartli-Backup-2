@@ -102,14 +102,51 @@
                     </ListView.View>
                     <ListView.ContextMenu>
                         <ContextMenu hc:Theme.Skin="Dark">
-                            <MenuItem x:Name="deletePlanMenuItem" Click="deletePlanMenuItem_Click" Header="Delete Plan"></MenuItem>
+                            <MenuItem x:Name="deletePlanMenuItem" Click="deletePlanMenuItem_Click" Header="Delete Plan">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/trash.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                                </MenuItem.Icon>
+                            </MenuItem>
                             <Separator></Separator>
-                            <MenuItem x:Name="showBackupFolderMenuItem" Click="showBackupFolderMenuItem_Click" Header="Show Backupfolder"></MenuItem>
+                            <MenuItem x:Name="showBackupFolderMenuItem" Click="showBackupFolderMenuItem_Click" Header="Show Backupfolder">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/folder.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                                </MenuItem.Icon>
+                            </MenuItem>
                             <Separator></Separator>
-                            <MenuItem x:Name="createBackupMenuItem" Click="createBackupMenuItem_Click" Header="Create Backup"></MenuItem>
-                            <MenuItem x:Name="editPlanMenuItem" Click="editPlanMenuItem_Click" Header="Edit Plan"></MenuItem>
+                            <MenuItem x:Name="createBackupMenuItem" Click="createBackupMenuItem_Click" Header="Create Backup">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/archive.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem x:Name="editPlanMenuItem" Click="editPlanMenuItem_Click" Header="Edit Plan">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/edit.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                                </MenuItem.Icon>
+                            </MenuItem>
                             <Separator></Separator>
-                            <MenuItem x:Name="restorBackupFromPlanMenuItem" Click="restorBackupFromPlanMenuItem_Click" Header="Restore Backup" />
+                            <MenuItem x:Name="exportPlanMenuItem" Header="Export Backups" Click="exportPlanMenuItem_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/export-1.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem x:Name="exportPlanSecuredMenuItem" Header="Export Backups Secured" Click="exportPlanSecuredMenuItem_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/export-2.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator></Separator>
+                            <MenuItem x:Name="importPlanMenuItem" Header="Import Backups" Click="importPlanMenuItem_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/import.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator></Separator>
+                            <MenuItem x:Name="restorBackupFromPlanMenuItem" Click="restorBackupFromPlanMenuItem_Click" Header="Restore Backup">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/history.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                                </MenuItem.Icon>
+                            </MenuItem>
                         </ContextMenu>
                     </ListView.ContextMenu>
                 </ListView>

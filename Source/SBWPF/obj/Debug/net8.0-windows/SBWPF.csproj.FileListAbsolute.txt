@@ -65,3 +65,7 @@ C:\Users\andy1\source\repos\SBWPF\SBWPF\bin\Debug\net8.0-windows\Legal\WPFDarkTh
 C:\Users\andy1\source\repos\SBWPF\SBWPF\bin\Debug\net8.0-windows\Legal\BootstrapIcons.txt
 C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Debug\net8.0-windows\AboutDialog.g.cs
 C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Debug\net8.0-windows\AboutDialog.baml
+C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Debug\net8.0-windows\ExportSecuredDialog.g.cs
+C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Debug\net8.0-windows\ExportSecuredDialog.baml
+C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Debug\net8.0-windows\ImportSecruredDialog.g.cs
+C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Debug\net8.0-windows\ImportSecruredDialog.baml
