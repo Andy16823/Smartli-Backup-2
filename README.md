@@ -45,13 +45,6 @@ Contributions to Smartli Backup are welcome! Whether you find a bug, have a feat
 
 Smartli Backup is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Acknowledgements
-
-Smartli Backup would not be possible without the contributions of the following open-source projects:
-
-- [SharpVectors](https://github.com/SharpVectors/SharpVectors): Used for SVG image support.
-- [Newtonsoft.Json](https://www.newtonsoft.com/json): Used for JSON serialization.
-
 ## Feedback
 
 If you have any feedback, questions, or suggestions, feel free to [open an issue](https://github.com/Andy16823/Smartli-Backup-2/issues).
