@@ -18,6 +18,7 @@
             <TextBlock FontSize="12"  HorizontalAlignment="Center">Newtonsoft.Json (MIT Licence)</TextBlock>
             <TextBlock FontSize="12"  HorizontalAlignment="Center">SharpVectors / SharpVectors.wpf (BSD-3 Licence)</TextBlock>
             <TextBlock FontSize="12"  HorizontalAlignment="Center">SVGImage (MIT Licence)</TextBlock>
+            <TextBlock FontSize="12"  HorizontalAlignment="Center">WPFDarkTheme (MIT Licence)</TextBlock>
             <TextBlock FontSize="12"  HorizontalAlignment="Center">Bootstrap Icons (MIT Licence)</TextBlock>
             <Button Style="{StaticResource ButtonPrimary}" Click="Button_Click" Margin="15" Content="Licence Files" hc:BorderElement.CornerRadius="15"></Button>
         </StackPanel>
