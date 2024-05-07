@@ -660,5 +660,10 @@ namespace SBWPF
                 }
             }
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.CheckForBackups();
+        }
     }
 }

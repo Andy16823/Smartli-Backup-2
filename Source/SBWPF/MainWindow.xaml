@@ -9,7 +9,7 @@
         xmlns:svg1="clr-namespace:SVGImage.SVG;assembly=SVGImage"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
-        Title="Smartli - Backup" Height="720" Width="1280" Style="{DynamicResource CustomWindowStyle}" hc:Theme.Skin="Dark">
+        Title="Smartli - Backup" Height="720" Width="1280" Loaded="Window_Loaded" Style="{DynamicResource CustomWindowStyle}" hc:Theme.Skin="Dark">
     <DockPanel>
         <Grid Height="auto">
             <Grid.ColumnDefinitions>

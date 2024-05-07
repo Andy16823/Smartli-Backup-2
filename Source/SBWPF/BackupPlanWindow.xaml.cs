@@ -27,10 +27,11 @@ namespace SBWPF
 
         private ObservableCollection<Backuper.BackupSource> m_backupSources;
         private MainWindow m_mainWindow;
-
+        private String m_oldName;
 
         public BackupPlanWindow(BackupPlan plan, MainWindow mainWindow)
         {
+            m_oldName = plan.Name;
             BackupPlan = plan;
             m_mainWindow = mainWindow;
 
@@ -93,6 +94,15 @@ namespace SBWPF
 
         private void createPlanButton_Click(object sender, RoutedEventArgs e)
         {
+            if(!m_oldName.Equals(this.backupNameTextbox.Text))
+            {
+                var oldPath = System.IO.Path.Combine(m_mainWindow.BackupsPath, m_oldName);
+                var newPath = System.IO.Path.Combine(m_mainWindow.BackupsPath, this.backupNameTextbox.Text);
+                if (Directory.Exists(oldPath))
+                {
+                    Directory.Move(oldPath, newPath);
+                }
+            }
             BackupPlan.Sources = m_backupSources.ToList();
             Console.WriteLine(BackupPlan.Name);
             m_mainWindow.SavePlans();
