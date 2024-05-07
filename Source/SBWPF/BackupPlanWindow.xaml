@@ -1,0 +1,52 @@
+﻿<Window x:Class="SBWPF.BackupPlanWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SBWPF"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d"
+        Title="Backup Plan" Height="450" Width="600" Style="{DynamicResource CustomWindowStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="5" Text="Backup Name" VerticalAlignment="Center"></TextBlock>
+            <TextBox x:Name="backupNameTextbox" hc:Theme.Skin="Dark" Grid.Column="1" Margin="5"></TextBox> 
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="5" Text="Schedule" VerticalAlignment="Center"></TextBlock>
+            <hc:ComboBox x:Name="ScheduleCombobox" hc:Theme.Skin="Dark" Margin="5" Grid.Column="1"></hc:ComboBox>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+            <Button x:Name="addFolderButton" Click="addFolderButton_Click" MinWidth="120" Content="Add Directory" Margin="5" Style="{StaticResource ButtonPrimary}" hc:BorderElement.CornerRadius="5" />
+            <Button x:Name="addFileButton" Click="addFileButton_Click" MinWidth="120" Content="Add File" Margin="5" Style="{StaticResource ButtonPrimary}" hc:BorderElement.CornerRadius="5" />
+            <Button x:Name="removeSelection" Click="removeSelection_Click"  MinWidth="120" Content="Remove Selection" Margin="5" Style="{StaticResource ButtonDanger}" hc:BorderElement.CornerRadius="5" />
+        </StackPanel>
+        <ListView x:Name="backupSources" Grid.Row="3" Margin="5" hc:Theme.Skin="Dark">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="auto" Header="Name" DisplayMemberBinding="{Binding Name}" ></GridViewColumn>
+                    <GridViewColumn Width="auto" Header="Path" DisplayMemberBinding="{Binding Path}"></GridViewColumn>
+                    <GridViewColumn Width="auto" Header="Type" DisplayMemberBinding="{Binding Type}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Right">
+            <Button x:Name="createPlanButton" Click="createPlanButton_Click" Content="Save Backup Plan" Margin="5" Style="{StaticResource ButtonPrimary}" hc:BorderElement.CornerRadius="15" />
+        </StackPanel>
+    </Grid>
+</Window>

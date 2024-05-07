@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "7PQT7xFg5b8U85TGRtb3inSUhx4vKuc342TPVZXDXrEQLrRgD44h6Q1DCO+20f0gA16K3pxHxmZ3ZMkzutn7FQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\andy1\\source\\repos\\SBWPF\\SBWPF\\SBWPF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\andy1\\.nuget\\packages\\handycontrol\\3.5.1\\handycontrol.3.5.1.nupkg.sha512",
+    "C:\\Users\\andy1\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\andy1\\.nuget\\packages\\sharpvectors\\1.8.4\\sharpvectors.1.8.4.nupkg.sha512",
+    "C:\\Users\\andy1\\.nuget\\packages\\sharpvectors.wpf\\1.8.4\\sharpvectors.wpf.1.8.4.nupkg.sha512",
+    "C:\\Users\\andy1\\.nuget\\packages\\svgimage\\3.0.0\\svgimage.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
