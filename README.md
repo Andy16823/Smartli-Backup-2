@@ -31,6 +31,7 @@ Smartli Backup utilizes the following open-source libraries:
 - [WPFDarkTheme](https://github.com/AngryCarrot789/WPFDarkTheme): Provides a dark theme for WPF applications.
 - [Bootstrap Icons](https://icons.getbootstrap.com/): Used for icons in the user interface.
 - [SVGImage](https://github.com/dotnetprojects/SVGImage): Provides support for SVG images.
+- [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json): Provides Json utilitys for saving and loading backups.
 
 ## More Information
 
