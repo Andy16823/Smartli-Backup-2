@@ -5,7 +5,6 @@ Smartli Backup is a free, open-source, and user-friendly backup software designe
 ## Features
 
 - **Backup Plans:** Create various backup plans to regularly secure your data.
-- **Automatic Reminders:** Set up reminders to ensure timely backups.
 - **Selective Backup:** Choose specific files and folders to backup.
 - **Secure Storage:** Store backups securely to prevent data loss.
 - **Easy Restoration:** Quickly restore backups in case of data loss or damage.
