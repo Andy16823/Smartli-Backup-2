@@ -58,7 +58,7 @@
 
   <ItemGroup>
     <Reference Include="Backuper">
-      <HintPath>..\..\Backuper\Backuper\bin\Debug\net8.0\Backuper.dll</HintPath>
+      <HintPath>..\..\Backuper\Backuper\bin\Release\net8.0\Backuper.dll</HintPath>
     </Reference>
   </ItemGroup>
 

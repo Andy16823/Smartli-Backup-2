@@ -73,7 +73,7 @@ namespace SBWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SBWPF;V1.0.0.0;component/aboutdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SBWPF;component/aboutdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\AboutDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

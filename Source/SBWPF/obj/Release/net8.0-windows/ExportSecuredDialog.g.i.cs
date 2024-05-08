@@ -81,7 +81,7 @@ namespace SBWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SBWPF;V1.0.0.0;component/exportsecureddialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SBWPF;component/exportsecureddialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ExportSecuredDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -60,7 +60,7 @@ namespace SBWPF
                 var folderInfo = new FileInfo(openFolderDialog.FolderName);
 
                 var backupSource = new BackupSource();
-                backupSource.Name = folderInfo.Name;
+                backupSource.Name = GetSourceFolderName(folderInfo.Name, m_backupSources.ToList());
                 backupSource.Path = openFolderDialog.FolderName;
                 backupSource.Type = Backuper.Type.Directory;
 
@@ -76,7 +76,7 @@ namespace SBWPF
                 var folderInfo = new FileInfo(openFileDialog.FileName);
 
                 var backupSource = new BackupSource();
-                backupSource.Name = folderInfo.Name;
+                backupSource.Name = GetSourceFileName(System.IO.Path.GetFileNameWithoutExtension(openFileDialog.FileName), System.IO.Path.GetExtension(openFileDialog.FileName), m_backupSources.ToList());
                 backupSource.Path = openFileDialog.FileName;
                 backupSource.Type = Backuper.Type.File;
 
@@ -109,6 +109,49 @@ namespace SBWPF
             this.Close();
         }
 
+        private static String GetSourceFolderName(String oldName, List<BackupSource> backupSources)
+        {
+            if(IsDuplicate(oldName, backupSources))
+            {
+                var i = 1;
+                string fileName = $"{oldName}_{i}";
+                while (IsDuplicate(fileName, backupSources))
+                {
+                    i++;
+                    fileName = $"{oldName}_{i}";
+                }
+                return fileName;
+            }
+            return oldName;
+        }
+
+        private static String GetSourceFileName(String oldName, String extension, List<BackupSource> backupSources)
+        {
+            if (IsDuplicate(oldName + extension, backupSources))
+            {
+                var i = 1;
+                string fileName = $"{oldName}_{i}{extension}";
+                while (IsDuplicate(fileName, backupSources))
+                {
+                    i++;
+                    fileName = $"{oldName}_{i}{extension}";
+                }
+                return fileName;
+            }
+            return oldName + extension;
+        }
+
+        private static bool IsDuplicate(String name, List<BackupSource> backupSources)
+        {
+            foreach (var item in backupSources)
+            {
+                if(item.Name.Equals(name))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         
     }
 }

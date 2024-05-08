@@ -54,7 +54,7 @@ namespace FramePFX.Themes {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SBWPF;V1.0.0.0;component/themes/controls.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SBWPF;component/themes/controls.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Themes\Controls.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
