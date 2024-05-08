@@ -576,29 +576,37 @@ namespace SBWPF
         /// <param name="e"></param>
         private void exportPlanMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            if(this.backupsListView.SelectedItem != null)
+            if (!this.IsInProgress)
             {
-                var item = (BackupPlan) this.backupsListView.SelectedItem;
-                var saveFileDialog = new SaveFileDialog();
-                saveFileDialog.DefaultExt = ".sba";
-                if(saveFileDialog.ShowDialog() == true)
+                if (this.backupsListView.SelectedItem != null)
                 {
-                    StartProgress();
-                    object[] args = { saveFileDialog.FileName };
-                    SendInfoGrowl("Starting the export from " + item.Name);
-                    Backuper.Backuper.ExportBackupAsync(item, BackupsPath, saveFileDialog.FileName, (a) =>
+                    var item = (BackupPlan)this.backupsListView.SelectedItem;
+                    var saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.DefaultExt = ".sba";
+                    if (saveFileDialog.ShowDialog() == true)
                     {
-                        this.Dispatcher.Invoke(() =>
+                        StartProgress();
+                        object[] args = { saveFileDialog.FileName };
+                        SendInfoGrowl("Starting the export from " + item.Name);
+                        Backuper.Backuper.ExportBackupAsync(item, BackupsPath, saveFileDialog.FileName, (a) =>
                         {
-                            SendSuccessGrowl("Export done!");
-                            StopProgress();
+                            this.Dispatcher.Invoke(() =>
+                            {
+                                SendSuccessGrowl("Export done!");
+                                StopProgress();
 
-                            FileInfo fileInfo = new FileInfo((String)a[0]);
-                            Process.Start("explorer.exe", fileInfo.DirectoryName);
-                        });
-                    }, args);
+                                FileInfo fileInfo = new FileInfo((String)a[0]);
+                                Process.Start("explorer.exe", fileInfo.DirectoryName);
+                            });
+                        }, args);
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("There is another process running. Please wait until this process is done");
+            }
+            
         }
 
         /// <summary>
@@ -608,12 +616,20 @@ namespace SBWPF
         /// <param name="e"></param>
         private void exportPlanSecuredMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            if (this.backupsListView.SelectedItem != null)
+            if(!this.IsInProgress)
             {
-                var item = (BackupPlan)this.backupsListView.SelectedItem;
-                ExportSecuredDialog exportSecuredDialog = new ExportSecuredDialog(item, this);
-                exportSecuredDialog.ShowDialog();
+                if (this.backupsListView.SelectedItem != null)
+                {
+                    var item = (BackupPlan)this.backupsListView.SelectedItem;
+                    ExportSecuredDialog exportSecuredDialog = new ExportSecuredDialog(item, this);
+                    exportSecuredDialog.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show("There is another process running. Please wait until this process is done");
+            }
+            
         }
 
         /// <summary>
@@ -623,41 +639,48 @@ namespace SBWPF
         /// <param name="e"></param>
         private void importPlanMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Smartli Backup Archive (*.sba)|*.sba|Encrypted Smartli Backup Archive (*.esba)|*.esba";
-            if(openFileDialog.ShowDialog() == true)
+            if(!IsInProgress)
             {
-                var fileInfo = new FileInfo(openFileDialog.FileName);
-                if(fileInfo.Extension.Equals(".esba"))
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Smartli Backup Archive (*.sba)|*.sba|Encrypted Smartli Backup Archive (*.esba)|*.esba";
+                if (openFileDialog.ShowDialog() == true)
                 {
-                    ImportSecruredDialog importSecured = new ImportSecruredDialog(openFileDialog.FileName, this);
-                    importSecured.ShowDialog();
-                }
-                else
-                {
-                    StartProgress();
-                    SendInfoGrowl("Starting the import from the backup archive");
-                    Backuper.Backuper.ImportFromArchiveAsync(openFileDialog.FileName, BackupsPath, (plan, args) =>
+                    var fileInfo = new FileInfo(openFileDialog.FileName);
+                    if (fileInfo.Extension.Equals(".esba"))
                     {
-                        this.Dispatcher.Invoke(() =>
+                        ImportSecruredDialog importSecured = new ImportSecruredDialog(openFileDialog.FileName, this);
+                        importSecured.ShowDialog();
+                    }
+                    else
+                    {
+                        StartProgress();
+                        SendInfoGrowl("Starting the import from the backup archive");
+                        Backuper.Backuper.ImportFromArchiveAsync(openFileDialog.FileName, BackupsPath, (plan, args) =>
                         {
-                            StopProgress();
-                            if (plan != null)
+                            this.Dispatcher.Invoke(() =>
                             {
-                                SendSuccessGrowl("Import done");
-                                if (!this.BackupPlans.Contains(plan))
+                                StopProgress();
+                                if (plan != null)
                                 {
-                                    this.BackupPlans.Add(plan);
+                                    SendSuccessGrowl("Import done");
+                                    if (!this.BackupPlans.Contains(plan))
+                                    {
+                                        this.BackupPlans.Add(plan);
+                                    }
+                                    this.SavePlans();
                                 }
-                                this.SavePlans();
-                            }
-                            else
-                            {
-                                SendErrorGrowl("Something went wrong with the import");
-                            }
+                                else
+                                {
+                                    SendErrorGrowl("Something went wrong with the import");
+                                }
+                            });
                         });
-                    });
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("There is another process running. Please wait until this process is done");
             }
         }
 

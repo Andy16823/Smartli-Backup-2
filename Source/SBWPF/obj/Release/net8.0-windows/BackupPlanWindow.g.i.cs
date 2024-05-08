@@ -121,7 +121,7 @@ namespace SBWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SBWPF;component/backupplanwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SBWPF;V1.0.0.0;component/backupplanwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\BackupPlanWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
