@@ -69,3 +69,4 @@ C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Release\net8.0-windows\ExportSecured
 C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Release\net8.0-windows\ImportSecruredDialog.g.cs
 C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Release\net8.0-windows\ExportSecuredDialog.baml
 C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Release\net8.0-windows\ImportSecruredDialog.baml
+C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Release\net8.0-windows\SBWPF_Content.g.cs

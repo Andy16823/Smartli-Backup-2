@@ -185,7 +185,7 @@ namespace SBWPF
             HandyControl.Controls.Growl.InfoGlobal("Backup creation started!");
             object[] args = { index, backupWorker.Guid };
 
-            Backuper.Backuper.CreateBackupAsync(plan, BackupsPath, (a) =>
+            Backuper.Backuper.CreateBackupAsync(plan, BackupsPath, (a, result) =>
             {
                 Console.WriteLine("Backup completed");
                 this.Dispatcher.Invoke(new Action(() =>
@@ -200,7 +200,15 @@ namespace SBWPF
 
                     // End backup process
                     this.SavePlans();
-                    HandyControl.Controls.Growl.SuccessGlobal("Backup created");
+                    if(result == true)
+                    {
+                        HandyControl.Controls.Growl.SuccessGlobal("Backup created");
+                    }
+                    else
+                    {
+                        HandyControl.Controls.Growl.ErrorGlobal("The backup could not be performed, which is usually the case when a file to be backed up is being used by another process.");
+                    }
+                    
                     RefreshPlan(itemIndex);
                 }));
             }, args);
