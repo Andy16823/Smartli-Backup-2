@@ -34,7 +34,7 @@ Smartli Backup utilizes the following open-source libraries:
 
 ## More Information
 
-For more information about Smartli Backup, visit [the website](https://backups.smartli.me).
+For more information about Smartli Backup, visit [the website](https://backup.smartli.me).
 
 ## Contributing
 
