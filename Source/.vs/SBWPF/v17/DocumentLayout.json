@@ -1,0 +1,150 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|c:\\users\\andy1\\source\\repos\\smartli backup 2\\sbwpf\\sbwpf.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|solutionrelative:sbwpf\\sbwpf.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|c:\\users\\andy1\\source\\repos\\smartli backup 2\\sbwpf\\backupplanwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|solutionrelative:sbwpf\\backupplanwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|c:\\users\\andy1\\source\\repos\\smartli backup 2\\sbwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|solutionrelative:sbwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|c:\\users\\andy1\\source\\repos\\smartli backup 2\\sbwpf\\backupplanwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|solutionrelative:sbwpf\\backupplanwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|c:\\users\\andy1\\source\\repos\\smartli backup 2\\sbwpf\\restorebackupdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|solutionrelative:sbwpf\\restorebackupdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|c:\\users\\andy1\\source\\repos\\smartli backup 2\\sbwpf\\restorebackupdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|solutionrelative:sbwpf\\restorebackupdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|c:\\users\\andy1\\source\\repos\\smartli backup 2\\sbwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|solutionrelative:sbwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|c:\\users\\andy1\\source\\repos\\smartli backup 2\\sbwpf\\backuplistviewitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E20945D-1C3F-4C6B-9A96-F27DF1D7E86E}|SBWPF\\SBWPF.csproj|solutionrelative:sbwpf\\backuplistviewitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BackupPlanWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\BackupPlanWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SBWPF\\BackupPlanWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\BackupPlanWindow.xaml.cs",
+              "RelativeToolTip": "SBWPF\\BackupPlanWindow.xaml.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswEUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T18:08:48.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RestoreBackupDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\RestoreBackupDialog.xaml",
+              "RelativeDocumentMoniker": "SBWPF\\RestoreBackupDialog.xaml",
+              "ToolTip": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\RestoreBackupDialog.xaml",
+              "RelativeToolTip": "SBWPF\\RestoreBackupDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-25T15:37:42.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RestoreBackupDialog.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\RestoreBackupDialog.xaml.cs",
+              "RelativeDocumentMoniker": "SBWPF\\RestoreBackupDialog.xaml.cs",
+              "ToolTip": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\RestoreBackupDialog.xaml.cs",
+              "RelativeToolTip": "SBWPF\\RestoreBackupDialog.xaml.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAuwHcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T15:26:41.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BackupListviewItem.cs",
+              "DocumentMoniker": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\BackupListviewItem.cs",
+              "RelativeDocumentMoniker": "SBWPF\\BackupListviewItem.cs",
+              "ToolTip": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\BackupListviewItem.cs",
+              "RelativeToolTip": "SBWPF\\BackupListviewItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:36:52.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SBWPF\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SBWPF\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAH8CAAAAAAAAAAAWwJICAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T22:53:01.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SBWPF",
+              "DocumentMoniker": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\SBWPF.csproj",
+              "RelativeDocumentMoniker": "SBWPF\\SBWPF.csproj",
+              "ToolTip": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\SBWPF.csproj",
+              "RelativeToolTip": "SBWPF\\SBWPF.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-23T23:05:21.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BackupPlanWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\BackupPlanWindow.xaml",
+              "RelativeDocumentMoniker": "SBWPF\\BackupPlanWindow.xaml",
+              "ToolTip": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\BackupPlanWindow.xaml",
+              "RelativeToolTip": "SBWPF\\BackupPlanWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-25T18:08:43.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "SBWPF\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\MainWindow.xaml",
+              "RelativeToolTip": "SBWPF\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-25T15:07:08.778Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

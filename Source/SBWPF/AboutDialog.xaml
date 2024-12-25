@@ -9,7 +9,7 @@
         Title="AboutDialog" Height="300" Width="600" Style="{DynamicResource CustomWindowStyle}" hc:Theme.Skin="Dark">
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" Orientation="Vertical">
-            <TextBlock FontSize="18" HorizontalAlignment="Center" >Smartli Backup 2.0</TextBlock>
+            <TextBlock FontSize="18" HorizontalAlignment="Center" >DATAROWZ</TextBlock>
             <TextBlock FontSize="12"  HorizontalAlignment="Center" x:Name="versionLabel">Version: 2.0.0.0</TextBlock>
             <TextBlock FontSize="12"  HorizontalAlignment="Center">Licensed under the MIT licence</TextBlock>
             <Separator hc:Theme.Skin="Dark" Margin="0 15"></Separator>

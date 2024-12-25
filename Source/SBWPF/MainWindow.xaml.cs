@@ -4,6 +4,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
+using System.Numerics;
 using System.Reflection.Metadata;
 using System.Security.Policy;
 using System.Text;
@@ -102,11 +103,14 @@ namespace SBWPF
         /// <param name="e"></param>
         private void editPlanMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            if(backupsListView.SelectedItem != null)
+            if(MessageBox.Show("After modifying the backup plan, please create a full backup to ensure that the changes are included. An incremental backup will not contain any newly added or removed folders/files from the modified plan.", "Warning", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
-                var plan = (BackupPlan) backupsListView.SelectedItem;
-                BackupPlanWindow window = new BackupPlanWindow(plan, this);
-                window.Show();
+                if (backupsListView.SelectedItem != null)
+                {
+                    var plan = (BackupPlan)backupsListView.SelectedItem;
+                    BackupPlanWindow window = new BackupPlanWindow(plan, this);
+                    window.Show();
+                }
             }
         }
 
@@ -133,42 +137,13 @@ namespace SBWPF
         /// <summary>
         /// Creates an backup from the selected listview item
         /// </summary>
-        public void CreateBackup()
+        public void CreateBackup(bool incremental = false)
         {
             if (backupsListView.SelectedItem != null)
             {
-                //var plan = (BackupPlan)backupsListView.SelectedItem;
-
-                //BackupWorker backupWorker = new BackupWorker(this, plan);
-                //Workers.Add(backupWorker.Guid, backupWorker);
-                //backupWorker.StartTimer(250);
-
-                //HandyControl.Controls.Growl.InfoGlobal("Backup creation started!");
-                //object[] args = { backupsListView.SelectedIndex, backupWorker.Guid };
-
-                //Backuper.Backuper.CreateBackupAsync(plan, BackupsPath, (a) =>
-                //{
-                //    Console.WriteLine("Backup completed");
-                //    this.Dispatcher.Invoke(new Action(() =>
-                //    {
-                //        // Get args
-                //        int itemIndex = (int)a[0];
-                //        Guid guid = (Guid)a[1];
-
-                //        // Stop Worker
-                //        Workers[guid].StopTimer();
-                //        Workers.Remove(guid);
-
-                //        // End backup process
-                //        this.SavePlans();
-                //        HandyControl.Controls.Growl.SuccessGlobal("Backup created");
-                //        RefreshPlan(itemIndex);
-                //    }));
-                //}, args);
-
                 var plan = (BackupPlan)backupsListView.SelectedItem;
                 var index = backupsListView.SelectedIndex;
-                CreateBackup(plan, index);
+                CreateBackup(plan, index, incremental);
             }
             else
             {
@@ -176,8 +151,14 @@ namespace SBWPF
             }
         }
 
-        public void CreateBackup(BackupPlan plan, int index)
+        public void CreateBackup(BackupPlan plan, int index, bool incremental = false)
         {
+            var backupType = BackupType.Full;
+            if(incremental)
+            {
+                backupType = BackupType.Incremental;    
+            }
+
             BackupWorker backupWorker = new BackupWorker(this, plan);
             Workers.Add(backupWorker.Guid, backupWorker);
             backupWorker.StartTimer(250);
@@ -185,7 +166,7 @@ namespace SBWPF
             HandyControl.Controls.Growl.InfoGlobal("Backup creation started!");
             object[] args = { index, backupWorker.Guid };
 
-            Backuper.Backuper.CreateBackupAsync(plan, BackupsPath, (a, result) =>
+            Backuper.Backuper.CreateBackupAsync(plan, BackupsPath, backupType, (a, result) =>
             {
                 Console.WriteLine("Backup completed");
                 this.Dispatcher.Invoke(new Action(() =>
@@ -695,6 +676,11 @@ namespace SBWPF
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             this.CheckForBackups();
+        }
+
+        private void createIncrementalBackupMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            this.CreateBackup(true);
         }
     }
 }

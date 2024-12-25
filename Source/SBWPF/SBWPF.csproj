@@ -13,6 +13,8 @@
     <None Remove="Images\archive.png" />
     <None Remove="Images\arrow-clockwise.svg" />
     <None Remove="Images\box-fill.svg" />
+    <None Remove="Images\check-circle-fill.svg" />
+    <None Remove="Images\check-icon.png" />
     <None Remove="Images\clock-history.svg" />
     <None Remove="Images\edit.png" />
     <None Remove="Images\exclamation-triangle-fill.svg" />
@@ -22,11 +24,17 @@
     <None Remove="Images\history.png" />
     <None Remove="Images\import.png" />
     <None Remove="Images\info-circle.svg" />
+    <None Remove="Images\logo-light.png" />
     <None Remove="Images\plus-circle.svg" />
     <None Remove="Images\smartli.png" />
     <None Remove="Images\smartli.svg" />
     <None Remove="Images\trash.png" />
     <None Remove="Images\trash.svg" />
+    <None Remove="Images\warning-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\check-icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +43,7 @@
 
   <ItemGroup>
     <Resource Include="Images\archive.png" />
+    <Resource Include="Images\check-circle-fill.svg" />
     <Resource Include="Images\edit.png" />
     <Resource Include="Images\exclamation-triangle-fill.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -45,6 +54,9 @@
     <Resource Include="Images\history.png" />
     <Resource Include="Images\import.png" />
     <Resource Include="Images\info-circle.svg" />
+    <Resource Include="Images\logo-light.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\smartli.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -63,7 +75,7 @@
 
   <ItemGroup>
     <Reference Include="Backuper">
-      <HintPath>..\..\Backuper\Backuper\bin\Release\net8.0\Backuper.dll</HintPath>
+      <HintPath>..\..\Smartli Backuper\Backuper\bin\Release\net8.0\Backuper.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -82,6 +94,7 @@
     </Resource>
     <Resource Include="Images\trash.png" />
     <Resource Include="Images\trash.svg" />
+    <Resource Include="Images\warning-icon.png" />
   </ItemGroup>
 
   <ItemGroup>

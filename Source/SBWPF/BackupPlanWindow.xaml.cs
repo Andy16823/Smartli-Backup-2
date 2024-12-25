@@ -57,14 +57,33 @@ namespace SBWPF
             OpenFolderDialog openFolderDialog = new OpenFolderDialog();
             if(openFolderDialog.ShowDialog() == true)
             {
-                var folderInfo = new FileInfo(openFolderDialog.FolderName);
+                var folderInfo = new DirectoryInfo(openFolderDialog.FolderName);
+                var directoryName = folderInfo.Name;
 
-                var backupSource = new BackupSource();
-                backupSource.Name = GetSourceFolderName(folderInfo.Name, m_backupSources.ToList());
-                backupSource.Path = openFolderDialog.FolderName;
-                backupSource.Type = Backuper.Type.Directory;
-
-                m_backupSources.Add(backupSource);
+                if (!Backuper.Backuper.ContainsSource(BackupPlan, directoryName))
+                {
+                    var backupSource = new BackupSource();
+                    backupSource.Name = directoryName;
+                    backupSource.Path = openFolderDialog.FolderName;
+                    backupSource.Type = Backuper.Type.Directory;
+                    m_backupSources.Add(backupSource);
+                    UpdateBackupSources();
+                }
+                else
+                {
+                    if(MessageBox.Show("You cannot add a directory with the same name into the same backup package. Would you like to create a separate backup package for this directory?", "DATAROWZ Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        var newPlan = new BackupPlan(directoryName, BackupPlan.Schedule);
+                        var backupSource = new BackupSource();
+                        backupSource.Name = directoryName;
+                        backupSource.Path = openFolderDialog.FolderName;
+                        backupSource.Type = Backuper.Type.Directory;
+                        newPlan.Sources.Add(backupSource);
+                        m_mainWindow.BackupPlans.Add(newPlan);
+                        m_mainWindow.SavePlans();
+                        MessageBox.Show($"Plan {directoryName} created");
+                    }
+                }
             }
         }
 
@@ -73,14 +92,31 @@ namespace SBWPF
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
-                var folderInfo = new FileInfo(openFileDialog.FileName);
-
-                var backupSource = new BackupSource();
-                backupSource.Name = GetSourceFileName(System.IO.Path.GetFileNameWithoutExtension(openFileDialog.FileName), System.IO.Path.GetExtension(openFileDialog.FileName), m_backupSources.ToList());
-                backupSource.Path = openFileDialog.FileName;
-                backupSource.Type = Backuper.Type.File;
-
-                m_backupSources.Add(backupSource);
+                var fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
+                if(!Backuper.Backuper.ContainsSource(this.BackupPlan, fileName))
+                {
+                    var backupSource = new BackupSource();
+                    backupSource.Name = fileName;
+                    backupSource.Path = openFileDialog.FileName;
+                    backupSource.Type = Backuper.Type.File;
+                    m_backupSources.Add(backupSource);
+                    UpdateBackupSources();
+                }
+                else
+                {
+                    if (MessageBox.Show("You cannot add a file with the same name into the same backup package. Would you like to create a separate backup package for this file?", "DATAROWZ Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        var newPlan = new BackupPlan(fileName, BackupPlan.Schedule);
+                        var backupSource = new BackupSource();
+                        backupSource.Name = fileName;
+                        backupSource.Path = openFileDialog.FileName;
+                        backupSource.Type = Backuper.Type.File;
+                        newPlan.Sources.Add(backupSource);
+                        m_mainWindow.BackupPlans.Add(newPlan);
+                        m_mainWindow.SavePlans();
+                        MessageBox.Show($"Plan {fileName} created");
+                    }
+                }
             }
         }
 
@@ -103,55 +139,15 @@ namespace SBWPF
                     Directory.Move(oldPath, newPath);
                 }
             }
-            BackupPlan.Sources = m_backupSources.ToList();
+            UpdateBackupSources();
             Console.WriteLine(BackupPlan.Name);
             m_mainWindow.SavePlans();
             this.Close();
         }
 
-        private static String GetSourceFolderName(String oldName, List<BackupSource> backupSources)
+        private void UpdateBackupSources()
         {
-            if(IsDuplicate(oldName, backupSources))
-            {
-                var i = 1;
-                string fileName = $"{oldName}_{i}";
-                while (IsDuplicate(fileName, backupSources))
-                {
-                    i++;
-                    fileName = $"{oldName}_{i}";
-                }
-                return fileName;
-            }
-            return oldName;
+            BackupPlan.Sources = m_backupSources.ToList();
         }
-
-        private static String GetSourceFileName(String oldName, String extension, List<BackupSource> backupSources)
-        {
-            if (IsDuplicate(oldName + extension, backupSources))
-            {
-                var i = 1;
-                string fileName = $"{oldName}_{i}{extension}";
-                while (IsDuplicate(fileName, backupSources))
-                {
-                    i++;
-                    fileName = $"{oldName}_{i}{extension}";
-                }
-                return fileName;
-            }
-            return oldName + extension;
-        }
-
-        private static bool IsDuplicate(String name, List<BackupSource> backupSources)
-        {
-            foreach (var item in backupSources)
-            {
-                if(item.Name.Equals(name))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        
     }
 }

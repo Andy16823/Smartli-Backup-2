@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\andy1\source\repos\SBWPF\SBWPF\obj\Release\net8.0-windows\
+C:\Users\andy1\source\repos\Smartli Backup 2\SBWPF\obj\Release\net8.0-windows\
 SBWPF
 none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
-C:\Users\andy1\source\repos\SBWPF\SBWPF\App.xaml
+C:\Users\andy1\source\repos\Smartli Backup 2\SBWPF\App.xaml
 191384786802
 1-913308027
-24-1716672831
-210464309183
+25-1255295233
+2101622394598
 AboutDialog.xaml;BackupPlanWindow.xaml;ExportSecuredDialog.xaml;ImportSecruredDialog.xaml;MainWindow.xaml;RestoreBackupDialog.xaml;Styles\CustomStyles.xaml;Themes\ColourDictionaries\DarkGreyTheme.xaml;Themes\ColourDictionaries\DeepDark.xaml;Themes\ColourDictionaries\GreyTheme.xaml;Themes\ColourDictionaries\LightTheme.xaml;Themes\ColourDictionaries\RedBlackTheme.xaml;Themes\ColourDictionaries\SoftDark.xaml;Themes\ColourfulDarkTheme.xaml;Themes\ColourfulLightTheme.xaml;Themes\ControlColours.xaml;Themes\Controls.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;
 
-False
+True
 

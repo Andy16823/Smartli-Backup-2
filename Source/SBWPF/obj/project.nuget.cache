@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7PQT7xFg5b8U85TGRtb3inSUhx4vKuc342TPVZXDXrEQLrRgD44h6Q1DCO+20f0gA16K3pxHxmZ3ZMkzutn7FQ==",
+  "dgSpecHash": "mZMQN2/D6W4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\andy1\\source\\repos\\SBWPF\\SBWPF\\SBWPF.csproj",
+  "projectFilePath": "C:\\Users\\andy1\\source\\repos\\Smartli Backup 2\\SBWPF\\SBWPF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andy1\\.nuget\\packages\\handycontrol\\3.5.1\\handycontrol.3.5.1.nupkg.sha512",
     "C:\\Users\\andy1\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",

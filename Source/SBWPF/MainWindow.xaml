@@ -9,7 +9,7 @@
         xmlns:svg1="clr-namespace:SVGImage.SVG;assembly=SVGImage"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
-        Title="Smartli - Backup" Height="720" Width="1280" Loaded="Window_Loaded" Style="{DynamicResource CustomWindowStyle}" hc:Theme.Skin="Dark">
+        Title="Datarowz - Backup" Height="720" Width="1280" WindowState="Maximized" Loaded="Window_Loaded" Style="{DynamicResource CustomWindowStyle}" hc:Theme.Skin="Dark">
     <DockPanel>
         <Grid Height="auto">
             <Grid.ColumnDefinitions>
@@ -49,17 +49,16 @@
                             <TextBlock Text="About"/>
                         </StackPanel>
                     </Button>
-                    <Button Margin="5" Name="smartliButton" Click="smartliButton_Click" Style="{StaticResource FlatButtonStyle}">
-                        <StackPanel Orientation="Vertical">
-                            <Image Margin="5" Source="/Images/smartli.png" Width="32" Height="32" RenderOptions.BitmapScalingMode="HighQuality" />
-                            <TextBlock Text="Smartli.me"/>
-                        </StackPanel>
-                    </Button>
-                    <Separator hc:Theme.Skin="Dark" Margin="5"></Separator>
                     <Button ToolTip="Check for Backups" Margin="5" Style="{StaticResource FlatButtonStyle}" Click="Button_Click">
                         <StackPanel Orientation="Vertical">
                             <svg1:SVGImage Margin="5" Source="/SBWPF;component/Images/arrow-clockwise.svg" Width="32" Height="32" OverrideColor="White" />
                             <TextBlock Text="Check for Backups"/>
+                        </StackPanel>
+                    </Button>
+                    <Separator hc:Theme.Skin="Dark" Margin="5"></Separator>
+                    <Button Margin="5" Name="smartliButton" Click="smartliButton_Click" Style="{StaticResource FlatButtonStyle}">
+                        <StackPanel Orientation="Vertical">
+                            <Image Margin="5" Source="/Images/logo-light.png" Width="64" Height="64" RenderOptions.BitmapScalingMode="HighQuality" />
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -115,6 +114,11 @@
                             </MenuItem>
                             <Separator></Separator>
                             <MenuItem x:Name="createBackupMenuItem" Click="createBackupMenuItem_Click" Header="Create Backup">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/archive.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem x:Name="createIncrementalBackupMenuItem" Click="createIncrementalBackupMenuItem_Click"  Header="Create Incremental Backup">
                                 <MenuItem.Icon>
                                     <Image Source="/Images/archive.png" RenderOptions.BitmapScalingMode="HighQuality" />
                                 </MenuItem.Icon>
