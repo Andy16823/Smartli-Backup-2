@@ -1,6 +1,6 @@
 # DATAROWZ
 
-Smartli Backup is a free, open-source, and user-friendly backup software designed to help you safeguard and protect your important data. It offers powerful backup capabilities while being easy to use.
+DATAROWZ is a free, open-source, and user-friendly backup software designed to help you safeguard and protect your important data. It offers powerful backup capabilities while being easy to use.
 
 ## Features
 
@@ -8,13 +8,13 @@ Smartli Backup is a free, open-source, and user-friendly backup software designe
 - **Selective Backup:** Choose specific files and folders to backup.
 - **Secure Storage:** Store backups securely to prevent data loss.
 - **Easy Restoration:** Quickly restore backups in case of data loss or damage.
-- **Portable:** Run Smartli Backup directly from a USB stick for convenience.
+- **Portable:** Run DATAROWZ directly from a USB stick for convenience.
 - **Optimized Performance:** Fully compatible with .NET 8 for optimized performance.
 - **Seamless Integration:** Integrates seamlessly with WPF for a smooth user experience.
 
 ## Getting Started
 
-To get started with Smartli Backup, simply download the latest release and run the executable. Follow the intuitive user interface to create backup plans and start protecting your data.
+To get started with DATAROWZ, simply download the latest release and run the executable. Follow the intuitive user interface to create backup plans and start protecting your data.
 
 ## System Requirements
 
@@ -23,7 +23,7 @@ To get started with Smartli Backup, simply download the latest release and run t
 
 ## Dependencies
 
-Smartli Backup utilizes the following open-source libraries:
+DATAROWZ utilizes the following open-source libraries:
 
 - [HandyControl](https://github.com/HandyOrg/HandyControl): Used for UI components and controls.
 - [SharpVectors](https://github.com/ElinamLLC/SharpVectors): Used for svg icons.
@@ -34,19 +34,19 @@ Smartli Backup utilizes the following open-source libraries:
 
 ## More Information
 
-For more information about Smartli Backup, visit [the website](https://backup.smartli.me).
+For more information about DATAROWZ, visit [the website](https://datarowz.com).
 
 ## Contributing
 
-Contributions to Smartli Backup are welcome! Whether you find a bug, have a feature request, or want to contribute code, feel free to open an issue or submit a pull request.
+Contributions to DATAROWZ are welcome! Whether you find a bug, have a feature request, or want to contribute code, feel free to open an issue or submit a pull request.
 
 ## License
 
-Smartli Backup is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+DATAROWZ is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Feedback
 
 If you have any feedback, questions, or suggestions, feel free to [open an issue](https://github.com/Andy16823/Smartli-Backup-2/issues).
 
-Take control of your data and simplify your backup management with Smartli Backup!
+Take control of your data and simplify your backup management with DATAROWZ!
 
