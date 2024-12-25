@@ -22,6 +22,7 @@
     <None Remove="Images\export-2.png" />
     <None Remove="Images\folder.png" />
     <None Remove="Images\history.png" />
+    <None Remove="Images\import-icon.png" />
     <None Remove="Images\import.png" />
     <None Remove="Images\info-circle.svg" />
     <None Remove="Images\logo-light.png" />
@@ -31,6 +32,7 @@
     <None Remove="Images\trash.png" />
     <None Remove="Images\trash.svg" />
     <None Remove="Images\warning-icon.png" />
+    <None Remove="import-icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +54,7 @@
     <Resource Include="Images\export-2.png" />
     <Resource Include="Images\folder.png" />
     <Resource Include="Images\history.png" />
+    <Resource Include="Images\import-icon.png" />
     <Resource Include="Images\import.png" />
     <Resource Include="Images\info-circle.svg" />
     <Resource Include="Images\logo-light.png">
@@ -95,6 +98,7 @@
     <Resource Include="Images\trash.png" />
     <Resource Include="Images\trash.svg" />
     <Resource Include="Images\warning-icon.png" />
+    <Resource Include="import-icon.png" />
   </ItemGroup>
 
   <ItemGroup>

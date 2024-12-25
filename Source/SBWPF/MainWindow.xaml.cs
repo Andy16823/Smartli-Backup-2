@@ -1,5 +1,6 @@
 ﻿using Backuper;
 using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -51,6 +52,40 @@ namespace SBWPF
             }
             LoadPlans();
             backupsListView.ItemsSource = BackupPlans;
+        }
+
+        /// <summary>
+        /// Checks if a plan with the given name exist
+        /// </summary>
+        /// <param name="backupPlan"></param>
+        /// <returns></returns>
+        public bool ContainsPlan(BackupPlan backupPlan)
+        {
+            foreach (var plan in this.BackupPlans)
+            {
+                if(plan.Name.Equals(backupPlan.Name, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }       
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Renams an NEW plan. Only use this when the plan directory dont exist yet!
+        /// </summary>
+        /// <param name="backupPlan"></param>
+        public String RenameNewPlan(BackupPlan backupPlan)
+        {
+            var i = 0;
+            foreach (var plan in this.BackupPlans)
+            {
+                if(plan.Name.StartsWith(backupPlan.Name))
+                {
+                    i++;
+                }
+            }
+            return backupPlan.Name + $"_{i}";
         }
 
         /// <summary>
@@ -544,7 +579,7 @@ namespace SBWPF
         /// <param name="e"></param>
         private void smartliButton_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("explorer.exe", "https://smartli.me");
+            Process.Start("explorer.exe", "http://datarowz.com/");
         }
 
         /// <summary>
@@ -681,6 +716,55 @@ namespace SBWPF
         private void createIncrementalBackupMenuItem_Click(object sender, RoutedEventArgs e)
         {
             this.CreateBackup(true);
+        }
+
+        private void importPlansButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Please select the path to the previous application to import the backup plans.", "Information");
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "SBWPF.exe|SBWPF.exe|Alle Dateien (*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.Title = "Plese select the file SBWPF.exe";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var directory = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
+                var plansFile = System.IO.Path.Combine(directory, "plans.json");
+                if (System.IO.File.Exists(plansFile))
+                {
+                    var plans = JsonConvert.DeserializeObject<List<BackupPlan>>(System.IO.File.ReadAllText(plansFile));
+                    if (plans != null)
+                    {
+                        if (MessageBox.Show($"Backup Plans found. You want import the {plans.Count} Plans?", "Import Information", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                        {
+                            foreach (var plan in plans)
+                            {
+                                if(!this.ContainsPlan(plan))
+                                {
+                                    this.BackupPlans.Add(plan);
+                                }
+                                else
+                                {
+                                    var newName = this.RenameNewPlan(plan);
+                                    plan.Name = newName;
+                                    this.BackupPlans.Add(plan);
+                                }
+                            }
+                            this.SavePlans();
+                            MessageBox.Show("Backup plans imported successfully.");
+                            this.CheckForBackups();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error loading the plans");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No backup plans could be found.");
+                }
+            }
         }
     }
 }

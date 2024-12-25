@@ -43,6 +43,12 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Bottom">
+                    <Button Margin="5" Name="importPlansButton" Click="importPlansButton_Click" Style="{StaticResource FlatButtonStyle}">
+                        <StackPanel Orientation="Vertical">
+                            <Image Width="32" Height="32" Source="/import-icon.png" />
+                            <TextBlock Text="Import Plans"/>
+                        </StackPanel>
+                    </Button>
                     <Button Margin="5" Name="aboutButton" Click="aboutButton_Click" Style="{StaticResource FlatButtonStyle}">
                         <StackPanel Orientation="Vertical">
                             <svg1:SVGImage Margin="5" Source="/SBWPF;component/Images/info-circle.svg" Width="32" Height="32" OverrideColor="White" />
